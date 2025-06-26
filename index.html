@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit User Data</title>
+</head>
+<body>
+  <h1>User Info Submission</h1>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JavaScript Lab</title>
-  </head>
+  <form id="userForm">
+    <label>
+      Name:
+      <input type="text" id="nameInput" required />
+    </label>
+    <br /><br />
+    <label>
+      Email:
+      <input type="email" id="emailInput" required />
+    </label>
+    <br /><br />
+    <input type="submit" value="Submit" />
+  </form>
 
-  <body>
-    <script src="index.js"></script>
-  </body>
+  <script src="index.js"></script>
+  <script>
+    const form = document.getElementById("userForm");
 
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("nameInput").value;
+      const email = document.getElementById("emailInput").value;
+
+      submitData(name, email);
+    });
+  </script>
+</body>
 </html>
